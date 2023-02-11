@@ -692,6 +692,14 @@ void Perform_Reminder(R_Linkedlist &r,R_Stack &rs,int &Choice){
                     SetConsoleTextAttribute(color,47);
                     continue;
                 }
+                if (y < 1){
+                    system("cls");
+                    Reminder_Interface(r,rs,Choice);
+                    SetConsoleTextAttribute(color,36);
+                    cout << "\t Error! You have an Error in Last Progress please try again correctly :)" << endl;
+                    SetConsoleTextAttribute(color,47);
+                    continue;
+                }
                 cout << "\n\t-Enter the New Month(Date): ";
                 SetConsoleTextAttribute(color,32);
                 cin >> m;
@@ -706,6 +714,14 @@ void Perform_Reminder(R_Linkedlist &r,R_Stack &rs,int &Choice){
                     SetConsoleTextAttribute(color,47);
                     continue;
                 }
+                if (m > 12 || m < 0){
+                    system("cls");
+                    Reminder_Interface(r,rs,Choice);
+                    SetConsoleTextAttribute(color,36);
+                    cout << "\t Error! You have an Error in Last Progress please try again correctly :)" << endl;
+                    SetConsoleTextAttribute(color,47);
+                    continue;
+                }
                 cout << "\n\t-Enter the New Day(Date): ";
                 SetConsoleTextAttribute(color,32);
                 cin >> d;
@@ -713,6 +729,14 @@ void Perform_Reminder(R_Linkedlist &r,R_Stack &rs,int &Choice){
                 if (!d){
                     cin.clear();
                     cin.ignore(numeric_limits<streamsize>::max(),'\n');
+                    system("cls");
+                    Reminder_Interface(r,rs,Choice);
+                    SetConsoleTextAttribute(color,36);
+                    cout << "\t Error! You have an Error in Last Progress please try again correctly :)" << endl;
+                    SetConsoleTextAttribute(color,47);
+                    continue;
+                }
+                if (d > 31 || d < 1){
                     system("cls");
                     Reminder_Interface(r,rs,Choice);
                     SetConsoleTextAttribute(color,36);
@@ -762,6 +786,14 @@ void Perform_Reminder(R_Linkedlist &r,R_Stack &rs,int &Choice){
                     SetConsoleTextAttribute(color,47);
                     continue;
                 }
+                if (h > 24 || h < 1){
+                    system("cls");
+                    Reminder_Interface(r,rs,Choice);
+                    SetConsoleTextAttribute(color,36);
+                    cout << "\t Error! You have an Error in Last Progress please try again correctly :)" << endl;
+                    SetConsoleTextAttribute(color,47);
+                    continue;
+                }
                 cout << "\n\t-Enter the New Minute(Time): ";
                 SetConsoleTextAttribute(color,32);
                 cin >> x;
@@ -776,9 +808,17 @@ void Perform_Reminder(R_Linkedlist &r,R_Stack &rs,int &Choice){
                     SetConsoleTextAttribute(color,36);
                     cout << "\t Error! You have an Error in Last Progress please try again correctly :)" << endl;
                     SetConsoleTextAttribute(color,47);
-                    return;
+                    continue;
                 }
                 min = stoi(x);
+                if (min > 60 || min < 0){
+                    system("cls");
+                    Reminder_Interface(r,rs,0);
+                    SetConsoleTextAttribute(color,36);
+                    cout << "\t Error! You have an Error in Last Progress please try again correctly :)" << endl;
+                    SetConsoleTextAttribute(color,47);
+                    continue;
+                }
                 r.Modify_data_certain_specified_node(pos-1,h,min,T,Y,M,D,H,Min);
                 rs.Modify_data_certain_specified_node(h,min,T,Y,M,D,H,Min);
                 f.Modify_data(h,min,T,Y,M,D,H,Min);
@@ -912,6 +952,14 @@ void Perform_Reminder(R_Linkedlist &r,R_Stack &rs,int &Choice){
             SetConsoleTextAttribute(color,47);
             return;
         }
+        if (y < 1){
+            system("cls");
+            Reminder_Interface(r,rs,0);
+            SetConsoleTextAttribute(color,36);
+            cout << "\t Error! You have an Error in Last Progress please try again correctly :)" << endl;
+            SetConsoleTextAttribute(color,47);
+            return;
+        }
         cout << "\n\t-Enter the Reminder(Task) month(Date):";
         SetConsoleTextAttribute(color,32);
         cin >> m;
@@ -919,6 +967,14 @@ void Perform_Reminder(R_Linkedlist &r,R_Stack &rs,int &Choice){
         if (!m){
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(),'\n');
+            system("cls");
+            Reminder_Interface(r,rs,0);
+            SetConsoleTextAttribute(color,36);
+            cout << "\t Error! You have an Error in Last Progress please try again correctly :)" << endl;
+            SetConsoleTextAttribute(color,47);
+            return;
+        }
+        if (m > 12 || m < 0){
             system("cls");
             Reminder_Interface(r,rs,0);
             SetConsoleTextAttribute(color,36);
@@ -940,6 +996,14 @@ void Perform_Reminder(R_Linkedlist &r,R_Stack &rs,int &Choice){
             SetConsoleTextAttribute(color,47);
             return;
         }
+        if (d > 31 || d < 1){
+            system("cls");
+            Reminder_Interface(r,rs,0);
+            SetConsoleTextAttribute(color,36);
+            cout << "\t Error! You have an Error in Last Progress please try again correctly :)" << endl;
+            SetConsoleTextAttribute(color,47);
+            return;
+        }
         cout << "\n\t-Enter the Reminder(Task) Hour(Time):";
         SetConsoleTextAttribute(color,32);
         cin >> h;
@@ -947,6 +1011,14 @@ void Perform_Reminder(R_Linkedlist &r,R_Stack &rs,int &Choice){
         if (!h){
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(),'\n');
+            system("cls");
+            Reminder_Interface(r,rs,0);
+            SetConsoleTextAttribute(color,36);
+            cout << "\t Error! You have an Error in Last Progress please try again correctly :)" << endl;
+            SetConsoleTextAttribute(color,47);
+            return;
+        }
+        if (h > 24 || h < 1){
             system("cls");
             Reminder_Interface(r,rs,0);
             SetConsoleTextAttribute(color,36);
@@ -971,6 +1043,14 @@ void Perform_Reminder(R_Linkedlist &r,R_Stack &rs,int &Choice){
             return;
         }
         min = stoi(x);
+        if (min > 60 || min < 0){
+            system("cls");
+            Reminder_Interface(r,rs,0);
+            SetConsoleTextAttribute(color,36);
+            cout << "\t Error! You have an Error in Last Progress please try again correctly :)" << endl;
+            SetConsoleTextAttribute(color,47);
+            return;
+        }
         r.InsertEnd(t,y,m,d,h,min);
         rs.push(t,y,m,d,h,min);
         f.insert_task(t,y,m,d,h,min);
